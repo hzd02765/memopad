@@ -1,0 +1,22 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  memo_id: 1
+  name: hello.txt
+  size: 13
+  content_type: text/plain
+  content: Hello World !
+two:
+  id: 2
+  memo_id: 2
+  name: world.txt
+  size: 7
+  content_type: text/plain
+  content: World !
+three:
+  id: 3
+  memo_id: 1
+  name: change.txt
+  size: 8
+  content_type: text/plain
+  content: Change ?

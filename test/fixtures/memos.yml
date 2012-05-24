@@ -1,0 +1,24 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  created_at: 2007-09-25 15:32:14 +09:00
+  text: テストデータ#1
+  location: 自宅
+two:
+  id: 2
+  text: テストデータ#2
+  location: 路上
+three:
+  id: 3
+  created_at: 2007-08-01 10:00:00 +09:00
+  text: テストデータ#3
+  location: http://example.com/3
+four:
+  id: 4
+  text: テストデータ#4
+  location: example.com/4
+five:
+  id: 5
+  created_at: 2007-08-01 10:00:01 +09:00
+  text: テストデータ#5
+  location: http://example.com/5

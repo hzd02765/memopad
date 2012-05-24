@@ -1,0 +1,29 @@
+<h1><%=h _('Listing memos')%></h1>
+
+<table>
+  <tr>
+  <% for column in Memo.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  <th><%=h _('attachments')%></th>
+  </tr>
+  
+<% for memo in @memos %>
+  <tr>
+    <% for column in Memo.content_columns %>
+      <td><%= format_column_value memo, column.name %></td>
+    <% end %>
+    <td><%= memo.attachments.length %></td>
+    <td><%= link_to _('Show'), :action => 'show', :id => memo %></td>
+    <td><%= link_to _('Edit'), :action => 'edit', :id => memo %></td>
+    <td><%= link_to _('Destroy'), { :action => 'destroy', :id => memo }, :confirm => _('Are you sure?'), :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to _('Previous page'), { :page => @memo_pages.current.previous } if @memo_pages.current.previous %>
+<%= link_to _('Next page'), { :page => @memo_pages.current.next } if @memo_pages.current.next %> 
+
+<br />
+
+<%= link_to _('New memo'), :action => 'new' %>

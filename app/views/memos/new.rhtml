@@ -1,0 +1,10 @@
+<h1><%=h _('New memo')%></h1>
+
+<% form_tag({:action => 'create'}, :multipart => true) do %>
+  <%= render :partial => 'form' %>
+  <p><label for="file"><%=h _('Attachment')%></label><br/>
+  <%= file_field_tag 'file' %></p>
+  <%= submit_tag _("Create") %>
+<% end %>
+
+<%= link_to _('Back'), :action => 'list' %>

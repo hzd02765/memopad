@@ -1,0 +1,30 @@
+<% for column in Memo.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%= format_column_value @memo, column.name %>
+</p>
+<% end %>
+
+<% if !@memo.attachments.empty? %>
+  <b><%=h  _('Attachments') %>:</b>
+  <table>
+    <tr>
+      <% for column in @memo.attachments.content_columns %>
+        <th><%= column.human_name %></th>
+      <% end %>
+    </tr>
+    <% for attachment in @memo.attachments %>
+      <tr>
+        <% for column in @memo.attachments.content_columns %>
+          <% if column.name == 'content' && attachment.content_type =~ %r{^image/.*?(png|jpg)$} %>
+            <td><%= image_tag url_for({:action => 'file', :id => attachment.id, :filename => attachment.name}), :alt => h(attachment.name) %></td>
+          <% else %>
+            <td><%= format_column_value attachment, column.name %></td>
+          <% end %>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @memo %> |
+<%= link_to 'Back', :action => 'list' %>

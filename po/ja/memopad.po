@@ -1,0 +1,116 @@
+# Japanese translations for PACKAGE package.
+# Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# <EMAIL@ADDRESS>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: memopad 1.0.0\n"
+"POT-Creation-Date: 2012-05-11 16:03+0900\n"
+"PO-Revision-Date: 2012-04-24 19:13+0900\n"
+"Last-Translator: <EMAIL@ADDRESS>\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: app/controllers/memos_controller.rb:33
+msgid "Memo was successfully created."
+msgstr "メモの作成に成功しました。"
+
+#: app/controllers/memos_controller.rb:47
+msgid "Memo was successfully updated."
+msgstr "メモの更新に成功しました。"
+
+# app/models/attachment.rb:-
+msgid "attachment"
+msgstr "添付ファイル"
+
+# app/models/attachment.rb:-
+msgid "Attachment|Memo"
+msgstr "メモ"
+
+# app/models/attachment.rb:-
+msgid "Attachment|Name"
+msgstr "名前"
+
+# app/models/attachment.rb:-
+msgid "Attachment|Size"
+msgstr "サイズ"
+
+# app/models/attachment.rb:-
+msgid "Attachment|Content type"
+msgstr "種類"
+
+# app/models/attachment.rb:-
+msgid "Attachment|Content"
+msgstr "内容"
+
+# app/models/memo.rb:-
+msgid "memo"
+msgstr "メモ"
+
+# app/models/memo.rb:-
+msgid "Memo|Created at"
+msgstr "作成日付"
+
+# app/models/memo.rb:-
+msgid "Memo|Text"
+msgstr "本文"
+
+# app/models/memo.rb:-
+msgid "Memo|Location"
+msgstr "場所"
+
+#: app/views/memos/list.rhtml:1
+msgid "Listing memos"
+msgstr "メモ一覧"
+
+#: app/views/memos/list.rhtml:15
+msgid "Show"
+msgstr "表示"
+
+#: app/views/memos/list.rhtml:16
+msgid "Edit"
+msgstr "編集"
+
+#: app/views/memos/list.rhtml:17
+msgid "Destroy"
+msgstr "削除"
+
+#: app/views/memos/list.rhtml:17
+msgid "Are you sure?"
+msgstr "よろしいですか?"
+
+#: app/views/memos/list.rhtml:22
+msgid "Previous page"
+msgstr "前のページ"
+
+#: app/views/memos/list.rhtml:23
+msgid "Next page"
+msgstr "次のページ"
+
+#: app/views/memos/list.rhtml:27 app/views/memos/new.rhtml:1
+msgid "New memo"
+msgstr "新規作成"
+
+#: app/views/memos/new.rhtml:5
+msgid "Attachment"
+msgstr "添付ファイル"
+
+#: app/views/memos/new.rhtml:7
+msgid "Create"
+msgstr "作成"
+
+#: app/views/memos/new.rhtml:10
+msgid "Back"
+msgstr "戻る"
+
+#: app/views/memos/_form.rhtml:5
+msgid "Text"
+msgstr "本文"
+
+#: app/views/memos/_form.rhtml:8
+msgid "Location"
+msgstr "場所"

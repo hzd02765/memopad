@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: memopad 1.0.0\n"
+"POT-Creation-Date: 2012-05-11 16:03+0900\n"
+"PO-Revision-Date: 2012-04-24 19:13+0900\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: app/controllers/memos_controller.rb:33
+msgid "Memo was successfully created."
+msgstr ""
+
+#: app/controllers/memos_controller.rb:47
+msgid "Memo was successfully updated."
+msgstr ""
+
+# app/models/attachment.rb:-
+msgid "attachment"
+msgstr ""
+
+# app/models/attachment.rb:-
+msgid "Attachment|Memo"
+msgstr ""
+
+# app/models/attachment.rb:-
+msgid "Attachment|Name"
+msgstr ""
+
+# app/models/attachment.rb:-
+msgid "Attachment|Size"
+msgstr ""
+
+# app/models/attachment.rb:-
+msgid "Attachment|Content type"
+msgstr ""
+
+# app/models/attachment.rb:-
+msgid "Attachment|Content"
+msgstr ""
+
+# app/models/memo.rb:-
+msgid "memo"
+msgstr ""
+
+# app/models/memo.rb:-
+msgid "Memo|Created at"
+msgstr ""
+
+# app/models/memo.rb:-
+msgid "Memo|Text"
+msgstr ""
+
+# app/models/memo.rb:-
+msgid "Memo|Location"
+msgstr ""
+
+#: app/views/memos/list.rhtml:1
+msgid "Listing memos"
+msgstr ""
+
+#: app/views/memos/list.rhtml:15
+msgid "Show"
+msgstr ""
+
+#: app/views/memos/list.rhtml:16
+msgid "Edit"
+msgstr ""
+
+#: app/views/memos/list.rhtml:17
+msgid "Destroy"
+msgstr ""
+
+#: app/views/memos/list.rhtml:17
+msgid "Are you sure?"
+msgstr ""
+
+#: app/views/memos/list.rhtml:22
+msgid "Previous page"
+msgstr ""
+
+#: app/views/memos/list.rhtml:23
+msgid "Next page"
+msgstr ""
+
+#: app/views/memos/list.rhtml:27 app/views/memos/new.rhtml:1
+msgid "New memo"
+msgstr ""
+
+#: app/views/memos/new.rhtml:5
+msgid "Attachment"
+msgstr ""
+
+#: app/views/memos/new.rhtml:7
+msgid "Create"
+msgstr ""
+
+#: app/views/memos/new.rhtml:10
+msgid "Back"
+msgstr ""
+
+#: app/views/memos/_form.rhtml:5
+msgid "Text"
+msgstr ""
+
+#: app/views/memos/_form.rhtml:8
+msgid "Location"
+msgstr ""

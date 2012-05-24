@@ -1,0 +1,11 @@
+<h1>Editing memo</h1>
+
+<% form_tag ({:action => 'update', :id => @memo}, :multipart => true) do %>
+  <%= render :partial => 'form' %>
+  <p><label for="file"><%=h _('Attachment')%></label><br/>
+  <%= file_field_tag 'file' %></p>
+  <%= submit_tag 'Edit' %>
+<% end %>
+
+<%= link_to 'Show', :action => 'show', :id => @memo %> |
+<%= link_to 'Back', :action => 'list' %>
