@@ -4727,3 +4727,7 @@ Processing MemosController#file (for 127.0.0.1 at 2012-05-18 17:39:35) [GET]
   [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT * FROM attachments WHERE (attachments.`id` = 2) [0m
 Sending data Elephant_Stone.jpg
 Completed in 0.00700 (142 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.00100 (14%) | 200 OK [http://127.0.0.1/memos/file/2/Elephant_Stone.jpg]
+  [4;36;1mSQL (0.005000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.033000)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT version FROM schema_info[0m
