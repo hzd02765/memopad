@@ -7055,3 +7055,68 @@ Redirected to http://test.host/memos/show/3
 Completed in 0.03300 (30 reqs/sec) | DB: 0.00600 (18%) | 302 Found [http://test.host/memos/update/3?file=%23%3CActionController%3A%3ATestUploadedFile%3A0x60415b8%3E]
   [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, name, content FROM attachments WHERE (attachments.memo_id = 3) [0m
   [4;35;1mSQL (0.002000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.001000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Received mail:
+ From: tomoyuki@brains.info
+To: receiver@example.com
+Subject: =?iso-2022-jp?B?GyRCJUYlOSVIGyhC?=
+
+Date: Sat, 6 Oct 2007 20:20:22 +0900
+
+Location
+Text
+
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Received mail:
+ From: tomoyuki@brains.info
+To: receiver@example.com
+Subject: =?iso-2022-jp?B?GyRCJUYlOSVIGyhC?=
+
+Date: Sat, 6 Oct 2007 20:20:22 +0900
+
+Location
+Text
+
+Received mail:
+ From: tomoyuki@brains.info
+To: receiver@example.com
+Subject: =?iso-2022-jp?B?GyRCJWElYhsoQg==?=
+Date: Sat, 6 Oct 2007 23:20:22 +0900
+
+Location
+Text
+  [4;36;1mMemo Load (0.012000)[0m   [0;1mSELECT * FROM memos WHERE (location = 'Location') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Received mail:
+ From: tomoyuki@brains.info
+To: receiver@example.com
+Subject: =?iso-2022-jp?B?GyRCJUYlOSVIGyhC?=
+
+Date: Sat, 6 Oct 2007 20:20:22 +0900
+
+Location
+Text
+
+Received mail:
+ From: tomoyuki@brains.info
+To: receiver@example.com
+Subject: =?iso-2022-jp?B?GyRCJWElYhsoQg==?=
+Date: Sat, 6 Oct 2007 23:20:22 +0900
+
+Location
+Text
+  [4;36;1mMemo Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('Text', '2007-10-06 23:20:22', 'Location')[0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (location = 'Location') [0m
+  [4;35;1mSQL (0.002000)[0m   [0mROLLBACK[0m

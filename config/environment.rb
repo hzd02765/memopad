@@ -60,3 +60,7 @@ end
 
 # Include your application configuration below
 require 'gettext/rails'
+
+module MemoPad
+  MAIL_FROM = 'tomoyuki@brains.info'
+end
