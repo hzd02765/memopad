@@ -1,3 +1,5 @@
+require 'net/pop'
+
 class MemosController < ApplicationController
   def index
     list
@@ -65,6 +67,19 @@ class MemosController < ApplicationController
     else
       send_data attachment.content, :filename => attachment.name, :type => attachment.content_type, :disposition => 'inline'
     end
+  end
+  
+  def mail
+    Net::POP3.APOP(MemoPad::USE_APOP).start(MemoPad::POP_SERVER[:address], MemoPad::POP_SERVER[:port], MemoPad::POP_SERVER[:account], MemoPad::POP_SERVER[:password]) do |pop|
+      unless pop.mails.empty?
+        pop.each_mail do |m|
+          m.delete if MemoMailer.receive m.pop
+        end
+      end
+    end
+    
+    redirect_to :action => 'list'
+    
   end
   
   private

@@ -72,6 +72,12 @@ class MemosControllerTest < Test::Unit::TestCase
     assert_equal attachments(:two).content, @response.body
   end
   
+  def test_mail
+    get :mail
+    assert_response :redirect
+    assert_redirected_to :action => 'list'
+  end
+  
   def test_new
     get :new
 

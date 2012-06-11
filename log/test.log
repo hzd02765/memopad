@@ -7120,3 +7120,596 @@ Text
   [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('Text', '2007-10-06 23:20:22', 'Location')[0m
   [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (location = 'Location') [0m
   [4;35;1mSQL (0.002000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mMemo Columns (0.001000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mMemo Load (0.037000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM memos [0m
+
+
+Processing MemosController#create (for 0.0.0.0 at 2012-06-11 18:23:06) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "memo"=>{"text"=>"テストデータ#3", "location"=>"テスト"}, "controller"=>"memos"}
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('テストデータ#3', '2012-06-11 18:23:06', 'テスト')[0m
+Redirected to http://test.host/memos/list
+Completed in 0.00400 (250 reqs/sec) | DB: 0.03800 (950%) | 302 Found [http://test.host/memos/create?memo=text%E3%83%86%E3%82%B9%E3%83%88%E3%83%87%E3%83%BC%E3%82%BF%233location%E3%83%86%E3%82%B9%E3%83%88]
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM memos [0m
+  [4;35;1mSQL (0.002000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.001000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#destroy (for 0.0.0.0 at 2012-06-11 18:23:06) [POST]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "id"=>"1", "controller"=>"memos"}
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;35;1mMemo Destroy (0.000000)[0m   [0m DELETE FROM memos
+ WHERE `id` = 1
+[0m
+Redirected to http://test.host/memos/list
+Completed in 0.00200 (500 reqs/sec) | DB: 0.00300 (150%) | 302 Found [http://test.host/memos/destroy/1]
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#edit (for 0.0.0.0 at 2012-06-11 18:23:06) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"memos"}
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+Rendering  within layouts/memos
+Rendering memos/edit
+Rendered memos/_form (0.00300)
+Completed in 0.01200 (83 reqs/sec) | Rendering: 0.01100 (91%) | DB: 0.00100 (8%) | 200 OK [http://test.host/memos/edit/1]
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;36;1mAttachment Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM attachments[0m
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT * FROM attachments WHERE (attachments.`id` = 2) [0m
+
+
+Processing MemosController#file (for 0.0.0.0 at 2012-06-11 18:23:06) [GET]
+  Session ID: 
+  Parameters: {"action"=>"file", "id"=>"2", "controller"=>"memos", "filename"=>"world.txt"}
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT * FROM attachments WHERE (attachments.`id` = 2) [0m
+Sending data world.txt
+Completed in 0.00100 (1000 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.00200 (200%) | 200 OK [http://test.host/memos/file/2/world.txt]
+
+
+Processing MemosController#file (for 0.0.0.0 at 2012-06-11 18:23:06) [GET]
+  Session ID: 
+  Parameters: {"action"=>"file", "id"=>"2", "controller"=>"memos", "filename"=>"world", "fileext"=>"txt"}
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT * FROM attachments WHERE (attachments.`id` = 2) [0m
+Sending data world.txt
+Completed in 0.00010 (10000 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.00000 (0%) | 200 OK [http://test.host/memos/file/2/world.txt]
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#index (for 0.0.0.0 at 2012-06-11 18:23:06) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"memos"}
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM memos [0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos LIMIT 0, 10[0m
+Rendering actionlistlayoutfalse within layouts/memos
+Rendering memos/list
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 2) [0m
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 3) [0m
+  [4;36;1mAttachment Load (0.001000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 4) [0m
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 5) [0m
+Completed in 0.03300 (30 reqs/sec) | Rendering: 0.03100 (93%) | DB: 0.00100 (3%) | 200 OK [http://test.host/memos]
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#list (for 0.0.0.0 at 2012-06-11 18:23:06) [GET]
+  Session ID: 
+  Parameters: {"action"=>"list", "controller"=>"memos"}
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM memos [0m
+  [4;36;1mMemo Load (0.001000)[0m   [0;1mSELECT * FROM memos LIMIT 0, 10[0m
+Rendering  within layouts/memos
+Rendering memos/list
+  [4;35;1mAttachment Load (0.001000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 2) [0m
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 3) [0m
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 4) [0m
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 5) [0m
+Completed in 0.00800 (124 reqs/sec) | Rendering: 0.00600 (74%) | DB: 0.00200 (25%) | 200 OK [http://test.host/memos/list]
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 2) [0m
+  [4;36;1mAttachment Load (0.001000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 2) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#mail (for 0.0.0.0 at 2012-06-11 18:23:06) [GET]
+  Session ID: 
+  Parameters: {"action"=>"mail", "controller"=>"memos"}
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#new (for 0.0.0.0 at 2012-06-11 18:23:06) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"memos"}
+Rendering  within layouts/memos
+Rendering memos/new
+Rendered memos/_form (0.00100)
+Completed in 0.00600 (166 reqs/sec) | Rendering: 0.00600 (100%) | DB: 0.00100 (16%) | 200 OK [http://test.host/memos/new]
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#show (for 0.0.0.0 at 2012-06-11 18:23:06) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"memos"}
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+Rendering  within layouts/memos
+Rendering memos/show
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM attachments WHERE (attachments.memo_id = 1) [0m
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+Completed in 0.01700 (58 reqs/sec) | Rendering: 0.01700 (100%) | DB: 0.00000 (0%) | 200 OK [http://test.host/memos/show/1]
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 3) [0m
+
+
+Processing MemosController#show (for 0.0.0.0 at 2012-06-11 18:23:06) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"memos"}
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 3) [0m
+Rendering  within layouts/memos
+Rendering memos/show
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM attachments WHERE (attachments.memo_id = 3) [0m
+Completed in 0.00300 (333 reqs/sec) | Rendering: 0.00200 (66%) | DB: 0.00000 (0%) | 200 OK [http://test.host/memos/show/3]
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.001000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#update (for 0.0.0.0 at 2012-06-11 18:23:06) [POST]
+  Session ID: 
+  Parameters: {"action"=>"update", "id"=>"1", "controller"=>"memos"}
+  [4;36;1mMemo Load (0.001000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;35;1mMemo Update (0.000000)[0m   [0mUPDATE memos SET `created_at` = '2007-09-25 15:32:14', `text` = 'テストデータ#1', `location` = '自宅' WHERE `id` = 1[0m
+Redirected to http://test.host/memos/show/1
+Completed in 0.00200 (499 reqs/sec) | DB: 0.00200 (100%) | 302 Found [http://test.host/memos/update/1]
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.001000)[0m   [0mBEGIN[0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mMemo Columns (0.001000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM memos [0m
+
+
+Processing MemosController#create (for 0.0.0.0 at 2012-06-11 18:26:19) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "memo"=>{"text"=>"テストデータ#3", "location"=>"テスト"}, "controller"=>"memos"}
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('テストデータ#3', '2012-06-11 18:26:19', 'テスト')[0m
+Redirected to http://test.host/memos/list
+Completed in 0.00200 (500 reqs/sec) | DB: 0.00100 (50%) | 302 Found [http://test.host/memos/create?memo=text%E3%83%86%E3%82%B9%E3%83%88%E3%83%87%E3%83%BC%E3%82%BF%233location%E3%83%86%E3%82%B9%E3%83%88]
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM memos [0m
+  [4;35;1mSQL (0.002000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM memos [0m
+
+
+Processing MemosController#create (for 0.0.0.0 at 2012-06-11 18:26:19) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "memo"=>{"text"=>"file upload test", "location"=>"テスト"}, "controller"=>"memos", "file"=>#<ActionController::TestUploadedFile:0x6108c58 @original_filename="README", @tempfile=#<File:C:/Users/admin/AppData/Local/Temp/README.3180.0>, @content_type="text/plain">}
+  [4;35;1mAttachment Columns (0.002000)[0m   [0mSHOW FIELDS FROM attachments[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('file upload test', '2012-06-11 18:26:19', 'テスト')[0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO attachments (`content_type`, `memo_id`, `name`, `size`, `content`) VALUES('text/plain', 7, 'README', 83, x'3130e697a5e381a7e3818ae381bce38188e3828b52756279206f6e205261696c73e585a5e99680e69599e5aea40a0a6172746f6e2028e8919720292f20e7bf94e6b3b3e7a4be2028e587bae78988e7a4be2029')[0m
+Redirected to http://test.host/memos/list
+Completed in 0.00500 (199 reqs/sec) | DB: 0.00400 (79%) | 302 Found [http://test.host/memos/create?file=%23%3CActionController%3A%3ATestUploadedFile%3A0x6108c58%3E&memo=textfile+upload+testlocation%E3%83%86%E3%82%B9%E3%83%88]
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM memos [0m
+  [4;35;1mAttachment Load (0.001000)[0m   [0mSELECT id, name, content FROM attachments WHERE (attachments.memo_id = 7) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#destroy (for 0.0.0.0 at 2012-06-11 18:26:19) [POST]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "id"=>"1", "controller"=>"memos"}
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;35;1mMemo Destroy (0.000000)[0m   [0m DELETE FROM memos
+ WHERE `id` = 1
+[0m
+Redirected to http://test.host/memos/list
+Completed in 0.00100 (1000 reqs/sec) | DB: 0.00200 (200%) | 302 Found [http://test.host/memos/destroy/1]
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#edit (for 0.0.0.0 at 2012-06-11 18:26:19) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"memos"}
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+Rendering  within layouts/memos
+Rendering memos/edit
+Rendered memos/_form (0.00300)
+Completed in 0.00700 (142 reqs/sec) | Rendering: 0.00700 (100%) | DB: 0.00100 (14%) | 200 OK [http://test.host/memos/edit/1]
+  [4;35;1mSQL (0.001000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.001000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT * FROM attachments WHERE (attachments.`id` = 2) [0m
+
+
+Processing MemosController#file (for 0.0.0.0 at 2012-06-11 18:26:19) [GET]
+  Session ID: 
+  Parameters: {"action"=>"file", "id"=>"2", "controller"=>"memos", "filename"=>"world.txt"}
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT * FROM attachments WHERE (attachments.`id` = 2) [0m
+Sending data world.txt
+Completed in 0.00010 (10000 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.00200 (2000%) | 200 OK [http://test.host/memos/file/2/world.txt]
+
+
+Processing MemosController#file (for 0.0.0.0 at 2012-06-11 18:26:19) [GET]
+  Session ID: 
+  Parameters: {"action"=>"file", "id"=>"2", "controller"=>"memos", "filename"=>"world", "fileext"=>"txt"}
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT * FROM attachments WHERE (attachments.`id` = 2) [0m
+Sending data world.txt
+Completed in 0.00100 (999 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.00000 (0%) | 200 OK [http://test.host/memos/file/2/world.txt]
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#index (for 0.0.0.0 at 2012-06-11 18:26:19) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"memos"}
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM memos [0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos LIMIT 0, 10[0m
+Rendering actionlistlayoutfalse within layouts/memos
+Rendering memos/list
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 2) [0m
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 3) [0m
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 4) [0m
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 5) [0m
+Completed in 0.01300 (76 reqs/sec) | Rendering: 0.01200 (92%) | DB: 0.00000 (0%) | 200 OK [http://test.host/memos]
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#list (for 0.0.0.0 at 2012-06-11 18:26:19) [GET]
+  Session ID: 
+  Parameters: {"action"=>"list", "controller"=>"memos"}
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM memos [0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos LIMIT 0, 10[0m
+Rendering  within layouts/memos
+Rendering memos/list
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 2) [0m
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 3) [0m
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 4) [0m
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 5) [0m
+Completed in 0.00800 (125 reqs/sec) | Rendering: 0.00700 (87%) | DB: 0.00000 (0%) | 200 OK [http://test.host/memos/list]
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 2) [0m
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 2) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#mail (for 0.0.0.0 at 2012-06-11 18:26:19) [GET]
+  Session ID: 
+  Parameters: {"action"=>"mail", "controller"=>"memos"}
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#new (for 0.0.0.0 at 2012-06-11 18:26:19) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"memos"}
+Rendering  within layouts/memos
+Rendering memos/new
+Rendered memos/_form (0.00100)
+Completed in 0.00600 (166 reqs/sec) | Rendering: 0.00500 (83%) | DB: 0.00100 (16%) | 200 OK [http://test.host/memos/new]
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#show (for 0.0.0.0 at 2012-06-11 18:26:19) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"memos"}
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+Rendering  within layouts/memos
+Rendering memos/show
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM attachments WHERE (attachments.memo_id = 1) [0m
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+Completed in 0.00600 (166 reqs/sec) | Rendering: 0.00600 (100%) | DB: 0.00000 (0%) | 200 OK [http://test.host/memos/show/1]
+  [4;36;1mSQL (0.001000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 3) [0m
+
+
+Processing MemosController#show (for 0.0.0.0 at 2012-06-11 18:26:19) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"memos"}
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 3) [0m
+Rendering  within layouts/memos
+Rendering memos/show
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM attachments WHERE (attachments.memo_id = 3) [0m
+Completed in 0.00400 (249 reqs/sec) | Rendering: 0.00300 (74%) | DB: 0.00100 (24%) | 200 OK [http://test.host/memos/show/3]
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#update (for 0.0.0.0 at 2012-06-11 18:26:19) [POST]
+  Session ID: 
+  Parameters: {"action"=>"update", "id"=>"1", "controller"=>"memos"}
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;36;1mMemo Update (0.000000)[0m   [0;1mUPDATE memos SET `created_at` = '2007-09-25 15:32:14', `text` = 'テストデータ#1', `location` = '自宅' WHERE `id` = 1[0m
+Redirected to http://test.host/memos/show/1
+Completed in 0.00200 (500 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://test.host/memos/update/1]
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#update (for 0.0.0.0 at 2012-06-11 18:26:19) [POST]
+  Session ID: 
+  Parameters: {"action"=>"update", "id"=>"1", "controller"=>"memos", "file"=>#<ActionController::TestUploadedFile:0x600a158 @original_filename="README", @tempfile=#<File:C:/Users/admin/AppData/Local/Temp/README.3180.1>, @content_type="text/plain">}
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mINSERT INTO attachments (`content_type`, `memo_id`, `name`, `size`, `content`) VALUES('text/plain', 1, 'README', 83, x'3130e697a5e381a7e3818ae381bce38188e3828b52756279206f6e205261696c73e585a5e99680e69599e5aea40a0a6172746f6e2028e8919720292f20e7bf94e6b3b3e7a4be2028e587bae78988e7a4be2029')[0m
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+  [4;35;1mMemo Update (0.000000)[0m   [0mUPDATE memos SET `created_at` = '2007-09-25 15:32:14', `text` = 'テストデータ#1', `location` = '自宅' WHERE `id` = 1[0m
+Redirected to http://test.host/memos/show/1
+Completed in 0.00300 (333 reqs/sec) | DB: 0.00200 (66%) | 302 Found [http://test.host/memos/update/1?file=%23%3CActionController%3A%3ATestUploadedFile%3A0x600a158%3E]
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, name, content FROM attachments WHERE (attachments.memo_id = 1) [0m
+  [4;35;1mSQL (0.002000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;36;1mMemo Load (0.001000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 3) [0m
+
+
+Processing MemosController#update (for 0.0.0.0 at 2012-06-11 18:26:19) [POST]
+  Session ID: 
+  Parameters: {"action"=>"update", "id"=>"3", "controller"=>"memos", "file"=>#<ActionController::TestUploadedFile:0x5ff9308 @original_filename="README", @tempfile=#<File:C:/Users/admin/AppData/Local/Temp/README.3180.2>, @content_type="text/plain">}
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 3) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mINSERT INTO attachments (`content_type`, `memo_id`, `name`, `size`, `content`) VALUES('text/plain', 3, 'README', 83, x'3130e697a5e381a7e3818ae381bce38188e3828b52756279206f6e205261696c73e585a5e99680e69599e5aea40a0a6172746f6e2028e8919720292f20e7bf94e6b3b3e7a4be2028e587bae78988e7a4be2029')[0m
+  [4;35;1mAttachment Load (0.001000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 3) [0m
+  [4;36;1mMemo Update (0.000000)[0m   [0;1mUPDATE memos SET `created_at` = '2007-08-01 10:00:00', `text` = 'テストデータ#3', `location` = 'http://example.com/3' WHERE `id` = 3[0m
+Redirected to http://test.host/memos/show/3
+Completed in 0.00400 (250 reqs/sec) | DB: 0.00400 (100%) | 302 Found [http://test.host/memos/update/3?file=%23%3CActionController%3A%3ATestUploadedFile%3A0x5ff9308%3E]
+  [4;35;1mAttachment Load (0.001000)[0m   [0mSELECT id, name, content FROM attachments WHERE (attachments.memo_id = 3) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mMemo Columns (0.001000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM memos [0m
+
+
+Processing MemosController#create (for 0.0.0.0 at 2012-06-11 18:44:48) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "memo"=>{"text"=>"テストデータ#3", "location"=>"テスト"}, "controller"=>"memos"}
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('テストデータ#3', '2012-06-11 18:44:48', 'テスト')[0m
+Redirected to http://test.host/memos/list
+Completed in 0.00200 (500 reqs/sec) | DB: 0.00100 (50%) | 302 Found [http://test.host/memos/create?memo=text%E3%83%86%E3%82%B9%E3%83%88%E3%83%87%E3%83%BC%E3%82%BF%233location%E3%83%86%E3%82%B9%E3%83%88]
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM memos [0m
+  [4;35;1mSQL (0.002000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM memos [0m
+
+
+Processing MemosController#create (for 0.0.0.0 at 2012-06-11 18:44:48) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "memo"=>{"text"=>"file upload test", "location"=>"テスト"}, "controller"=>"memos", "file"=>#<ActionController::TestUploadedFile:0x613d228 @tempfile=#<File:C:/Users/admin/AppData/Local/Temp/README.5736.0>, @content_type="text/plain", @original_filename="README">}
+  [4;35;1mAttachment Columns (0.002000)[0m   [0mSHOW FIELDS FROM attachments[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('file upload test', '2012-06-11 18:44:48', 'テスト')[0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO attachments (`content_type`, `memo_id`, `name`, `size`, `content`) VALUES('text/plain', 7, 'README', 83, x'3130e697a5e381a7e3818ae381bce38188e3828b52756279206f6e205261696c73e585a5e99680e69599e5aea40a0a6172746f6e2028e8919720292f20e7bf94e6b3b3e7a4be2028e587bae78988e7a4be2029')[0m
+Redirected to http://test.host/memos/list
+Completed in 0.00400 (250 reqs/sec) | DB: 0.00400 (100%) | 302 Found [http://test.host/memos/create?file=%23%3CActionController%3A%3ATestUploadedFile%3A0x613d228%3E&memo=textfile+upload+testlocation%E3%83%86%E3%82%B9%E3%83%88]
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM memos [0m
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, name, content FROM attachments WHERE (attachments.memo_id = 7) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mMemo Load (0.001000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#destroy (for 0.0.0.0 at 2012-06-11 18:44:48) [POST]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "id"=>"1", "controller"=>"memos"}
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;35;1mMemo Destroy (0.000000)[0m   [0m DELETE FROM memos
+ WHERE `id` = 1
+[0m
+Redirected to http://test.host/memos/list
+Completed in 0.00100 (1000 reqs/sec) | DB: 0.00200 (200%) | 302 Found [http://test.host/memos/destroy/1]
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#edit (for 0.0.0.0 at 2012-06-11 18:44:48) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"memos"}
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+Rendering  within layouts/memos
+Rendering memos/edit
+Rendered memos/_form (0.00300)
+Completed in 0.00700 (142 reqs/sec) | Rendering: 0.00700 (100%) | DB: 0.00200 (28%) | 200 OK [http://test.host/memos/edit/1]
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT * FROM attachments WHERE (attachments.`id` = 2) [0m
+
+
+Processing MemosController#file (for 0.0.0.0 at 2012-06-11 18:44:48) [GET]
+  Session ID: 
+  Parameters: {"action"=>"file", "id"=>"2", "controller"=>"memos", "filename"=>"world.txt"}
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT * FROM attachments WHERE (attachments.`id` = 2) [0m
+Sending data world.txt
+Completed in 0.00010 (10000 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.00000 (0%) | 200 OK [http://test.host/memos/file/2/world.txt]
+
+
+Processing MemosController#file (for 0.0.0.0 at 2012-06-11 18:44:48) [GET]
+  Session ID: 
+  Parameters: {"action"=>"file", "id"=>"2", "controller"=>"memos", "filename"=>"world", "fileext"=>"txt"}
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT * FROM attachments WHERE (attachments.`id` = 2) [0m
+Sending data world.txt
+Completed in 0.00100 (1000 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.00000 (0%) | 200 OK [http://test.host/memos/file/2/world.txt]
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#index (for 0.0.0.0 at 2012-06-11 18:44:48) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"memos"}
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM memos [0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos LIMIT 0, 10[0m
+Rendering actionlistlayoutfalse within layouts/memos
+Rendering memos/list
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 2) [0m
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 3) [0m
+  [4;35;1mAttachment Load (0.001000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 4) [0m
+  [4;36;1mAttachment Load (0.001000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 5) [0m
+Completed in 0.01200 (83 reqs/sec) | Rendering: 0.00900 (75%) | DB: 0.00300 (24%) | 200 OK [http://test.host/memos]
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.001000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#list (for 0.0.0.0 at 2012-06-11 18:44:48) [GET]
+  Session ID: 
+  Parameters: {"action"=>"list", "controller"=>"memos"}
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM memos [0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos LIMIT 0, 10[0m
+Rendering  within layouts/memos
+Rendering memos/list
+  [4;36;1mAttachment Load (0.001000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 2) [0m
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 3) [0m
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 4) [0m
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 5) [0m
+Completed in 0.00800 (124 reqs/sec) | Rendering: 0.00600 (74%) | DB: 0.00200 (24%) | 200 OK [http://test.host/memos/list]
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 2) [0m
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 2) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#mail (for 0.0.0.0 at 2012-06-11 18:44:48) [GET]
+  Session ID: 
+  Parameters: {"action"=>"mail", "controller"=>"memos"}
+  [4;35;1mSQL (0.001000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#new (for 0.0.0.0 at 2012-06-11 18:44:51) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"memos"}
+Rendering  within layouts/memos
+Rendering memos/new
+Rendered memos/_form (0.00100)
+Completed in 0.01100 (90 reqs/sec) | Rendering: 0.01000 (90%) | DB: 0.00100 (9%) | 200 OK [http://test.host/memos/new]
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mMemo Load (0.001000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#show (for 0.0.0.0 at 2012-06-11 18:44:51) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"memos"}
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+Rendering  within layouts/memos
+Rendering memos/show
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM attachments WHERE (attachments.memo_id = 1) [0m
+  [4;35;1mAttachment Load (0.001000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+Completed in 0.01300 (76 reqs/sec) | Rendering: 0.01100 (84%) | DB: 0.00200 (15%) | 200 OK [http://test.host/memos/show/1]
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 3) [0m
+
+
+Processing MemosController#show (for 0.0.0.0 at 2012-06-11 18:44:51) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"memos"}
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 3) [0m
+Rendering  within layouts/memos
+Rendering memos/show
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM attachments WHERE (attachments.memo_id = 3) [0m
+Completed in 0.00700 (142 reqs/sec) | Rendering: 0.00600 (85%) | DB: 0.00000 (0%) | 200 OK [http://test.host/memos/show/3]
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#update (for 0.0.0.0 at 2012-06-11 18:44:51) [POST]
+  Session ID: 
+  Parameters: {"action"=>"update", "id"=>"1", "controller"=>"memos"}
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;36;1mMemo Update (0.000000)[0m   [0;1mUPDATE memos SET `created_at` = '2007-09-25 15:32:14', `text` = 'テストデータ#1', `location` = '自宅' WHERE `id` = 1[0m
+Redirected to http://test.host/memos/show/1
+Completed in 0.00400 (249 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://test.host/memos/update/1]
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.001000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+
+
+Processing MemosController#update (for 0.0.0.0 at 2012-06-11 18:44:51) [POST]
+  Session ID: 
+  Parameters: {"action"=>"update", "id"=>"1", "controller"=>"memos", "file"=>#<ActionController::TestUploadedFile:0x603e660 @tempfile=#<File:C:/Users/admin/AppData/Local/Temp/README.5736.1>, @content_type="text/plain", @original_filename="README">}
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO attachments (`content_type`, `memo_id`, `name`, `size`, `content`) VALUES('text/plain', 1, 'README', 83, x'3130e697a5e381a7e3818ae381bce38188e3828b52756279206f6e205261696c73e585a5e99680e69599e5aea40a0a6172746f6e2028e8919720292f20e7bf94e6b3b3e7a4be2028e587bae78988e7a4be2029')[0m
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+  [4;35;1mMemo Update (0.001000)[0m   [0mUPDATE memos SET `created_at` = '2007-09-25 15:32:14', `text` = 'テストデータ#1', `location` = '自宅' WHERE `id` = 1[0m
+Redirected to http://test.host/memos/show/1
+Completed in 0.00700 (142 reqs/sec) | DB: 0.00200 (28%) | 302 Found [http://test.host/memos/update/1?file=%23%3CActionController%3A%3ATestUploadedFile%3A0x603e660%3E]
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, name, content FROM attachments WHERE (attachments.memo_id = 1) [0m
+  [4;35;1mSQL (0.002000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 1) [0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (memos.`id` = 3) [0m
+
+
+Processing MemosController#update (for 0.0.0.0 at 2012-06-11 18:44:51) [POST]
+  Session ID: 
+  Parameters: {"action"=>"update", "id"=>"3", "controller"=>"memos", "file"=>#<ActionController::TestUploadedFile:0x602d810 @tempfile=#<File:C:/Users/admin/AppData/Local/Temp/README.5736.2>, @content_type="text/plain", @original_filename="README">}
+  [4;35;1mMemo Load (0.001000)[0m   [0mSELECT * FROM memos WHERE (memos.`id` = 3) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mINSERT INTO attachments (`content_type`, `memo_id`, `name`, `size`, `content`) VALUES('text/plain', 3, 'README', 83, x'3130e697a5e381a7e3818ae381bce38188e3828b52756279206f6e205261696c73e585a5e99680e69599e5aea40a0a6172746f6e2028e8919720292f20e7bf94e6b3b3e7a4be2028e587bae78988e7a4be2029')[0m
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 3) [0m
+  [4;36;1mMemo Update (0.000000)[0m   [0;1mUPDATE memos SET `created_at` = '2007-08-01 10:00:00', `text` = 'テストデータ#3', `location` = 'http://example.com/3' WHERE `id` = 3[0m
+Redirected to http://test.host/memos/show/3
+Completed in 0.00500 (200 reqs/sec) | DB: 0.00300 (60%) | 302 Found [http://test.host/memos/update/3?file=%23%3CActionController%3A%3ATestUploadedFile%3A0x602d810%3E]
+  [4;35;1mAttachment Load (0.001000)[0m   [0mSELECT id, name, content FROM attachments WHERE (attachments.memo_id = 3) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mROLLBACK[0m

@@ -63,4 +63,8 @@ require 'gettext/rails'
 
 module MemoPad
   MAIL_FROM = 'tomoyuki@brains.info'
+  USE_APOP = false
+  POP_SERVER = {
+    :address => 'pop.example.com', :port => 110, :account => 'user1', :password => 'password'
+  }
 end

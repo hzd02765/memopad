@@ -4731,3 +4731,83 @@ Completed in 0.00700 (142 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.00100 (14%
   [4;35;1mSQL (0.033000)[0m   [0mSELECT version FROM schema_info[0m
   [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
   [4;35;1mSQL (0.000000)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.005000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.033000)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.026000)[0m   [0;1mSHOW FIELDS FROM attachments[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM attachments[0m
+  [4;36;1mSQL (0.025000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSHOW KEYS FROM memos[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.098000)[0m   [0mDROP DATABASE IF EXISTS `memopad_test`[0m
+  [4;36;1mSQL (0.027000)[0m   [0;1mCREATE DATABASE `memopad_test`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'attachments': DROP TABLE attachments[0m
+  [4;35;1mSQL (0.015000)[0m   [0mCREATE TABLE attachments (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `memo_id` int(11) DEFAULT NULL, `name` varchar(64) DEFAULT NULL, `size` int(11) DEFAULT NULL, `content_type` varchar(64) DEFAULT NULL, `content` blob DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'memos': DROP TABLE memos[0m
+  [4;35;1mSQL (0.005000)[0m   [0mCREATE TABLE memos (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime DEFAULT NULL, `text` varchar(256) DEFAULT NULL, `location` varchar(256) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.020000)[0m   [0;1mCREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.001000)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.003000)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
+  [4;35;1mSQL (0.001000)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSHOW FIELDS FROM attachments[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM attachments[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSHOW KEYS FROM memos[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.006000)[0m   [0mDROP DATABASE IF EXISTS `memopad_test`[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCREATE DATABASE `memopad_test`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'attachments': DROP TABLE attachments[0m
+  [4;35;1mSQL (0.004000)[0m   [0mCREATE TABLE attachments (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `memo_id` int(11) DEFAULT NULL, `name` varchar(64) DEFAULT NULL, `size` int(11) DEFAULT NULL, `content_type` varchar(64) DEFAULT NULL, `content` blob DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'memos': DROP TABLE memos[0m
+  [4;35;1mSQL (0.004000)[0m   [0mCREATE TABLE memos (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime DEFAULT NULL, `text` varchar(256) DEFAULT NULL, `location` varchar(256) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.003000)[0m   [0;1mCREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.001000)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
+  [4;35;1mSQL (0.001000)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSHOW FIELDS FROM attachments[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSHOW KEYS FROM attachments[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSHOW KEYS FROM memos[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.006000)[0m   [0mDROP DATABASE IF EXISTS `memopad_test`[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCREATE DATABASE `memopad_test`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'attachments': DROP TABLE attachments[0m
+  [4;35;1mSQL (0.021000)[0m   [0mCREATE TABLE attachments (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `memo_id` int(11) DEFAULT NULL, `name` varchar(64) DEFAULT NULL, `size` int(11) DEFAULT NULL, `content_type` varchar(64) DEFAULT NULL, `content` blob DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'memos': DROP TABLE memos[0m
+  [4;35;1mSQL (0.003000)[0m   [0mCREATE TABLE memos (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime DEFAULT NULL, `text` varchar(256) DEFAULT NULL, `location` varchar(256) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.004000)[0m   [0;1mCREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.001000)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.003000)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
+  [4;35;1mSQL (0.001000)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mSHOW FIELDS FROM attachments[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM attachments[0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM memos[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.005000)[0m   [0mDROP DATABASE IF EXISTS `memopad_test`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCREATE DATABASE `memopad_test`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'attachments': DROP TABLE attachments[0m
+  [4;35;1mSQL (0.003000)[0m   [0mCREATE TABLE attachments (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `memo_id` int(11) DEFAULT NULL, `name` varchar(64) DEFAULT NULL, `size` int(11) DEFAULT NULL, `content_type` varchar(64) DEFAULT NULL, `content` blob DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'memos': DROP TABLE memos[0m
+  [4;35;1mSQL (0.004000)[0m   [0mCREATE TABLE memos (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime DEFAULT NULL, `text` varchar(256) DEFAULT NULL, `location` varchar(256) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.003000)[0m   [0;1mCREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mUPDATE schema_info SET version = 3[0m
