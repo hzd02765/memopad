@@ -73,9 +73,19 @@ class MemosControllerTest < Test::Unit::TestCase
   end
   
   def test_mail
+    Net::POP3.new('memotest') do |addr, port, acct, pwd|
+      assert_equal MemoPad::POP_SERVER[:address], addr
+      assert_equal MemoPad::POP_SERVER[:port], port
+      assert_equal MemoPad::POP_SERVER[:account], acct
+      assert_equal MemoPad::POP_SERVER[:password], pwd
+    end
+    
     get :mail
     assert_response :redirect
     assert_redirected_to :action => 'list'
+    
+    assert !Net::POP3.instance.mails[0].deleted?
+    assert Net::POP3.instance.mails[1].deleted?
   end
   
   def test_new
