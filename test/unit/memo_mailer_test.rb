@@ -28,6 +28,34 @@ class MemoMailerTest < Test::Unit::TestCase
     assert_equal Time.parse('Sat, 6 oct 2007 23:20:22 +0900'), memos[0].created_at
   end
 
+  class TestMailer < ActionMailer::Base
+    def test_mail
+      @charset = CHARSET
+      recipients 'test@example.com'
+      subject NKF.nkf('-M', 'メモ')
+      from MemoPad::MAIL_FROM
+      part :content_type => 'text/plain',
+        :transfer_encoding => '7bit',
+        :body => "Location\r\nHello"
+      attachment :content_type => 'text/plain',
+        :filename => 'hello.txt',
+        :transfer_encoding => 'base64',
+        :body => 'Hello World'
+    end
+  end
+  
+  def test_attachment
+    mail = TestMailer.create_test_mail
+    MemoMailer.receive mail.encoded
+    memos = Memo.find(:all, :conditions => "location = 'Location'")
+    assert_equal 1, memos.length
+    assert_equal 1, memos[0].attachments.length
+    assert_equal 'hello.txt', memos[0].attachments[0].name
+    assert_equal 'text/plain', memos[0].attachments[0].content_type
+    assert_equal 13, memos[0].attachments[0].size
+    assert_equal 'Hello World !', memos[0].files[0].content
+  end
+  
   private
   
   def read_fixture(action)
