@@ -8724,3 +8724,415 @@ Text
   [4;36;1mSQL (0.000000)[0m   [0;1mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('Text', '2007-10-06 23:20:22', 'Location')[0m
   [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (location = 'Location') [0m
   [4;36;1mSQL (0.001000)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Received mail:
+ From: tomoyuki@brains.info
+To: test@example.com
+Subject: =?iso-2022-jp?B?GyRCJWElYhsoQg==?=
+Mime-Version: 1.0
+Content-Type: multipart/mixed; boundary=mimepart_4fe03413537f0_1b4821163a21a4
+
+
+--mimepart_4fe03413537f0_1b4821163a21a4
+Content-Type: text/plain; charset=iso-2022-jp
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Location
+Hello
+--mimepart_4fe03413537f0_1b4821163a21a4
+Content-Type: text/plain; name=hello.txt
+Content-Transfer-Encoding: Base64
+Content-Disposition: attachment; filename=hello.txt
+
+SGVsbG8gV29ybGQ=
+
+--mimepart_4fe03413537f0_1b4821163a21a4--
+
+  [4;36;1mMemo Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('Hello', '2012-06-19 17:10:59', 'Location')[0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Received mail:
+ From: tomoyuki@brains.info
+To: receiver@example.com
+Subject: =?iso-2022-jp?B?GyRCJUYlOSVIGyhC?=
+
+Date: Sat, 6 Oct 2007 20:20:22 +0900
+
+Location
+Text
+
+Received mail:
+ From: tomoyuki@brains.info
+To: receiver@example.com
+Subject: =?iso-2022-jp?B?GyRCJWElYhsoQg==?=
+Date: Sat, 6 Oct 2007 23:20:22 +0900
+
+Location
+Text
+  [4;36;1mSQL (0.001000)[0m   [0;1mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('Text', '2007-10-06 23:20:22', 'Location')[0m
+  [4;35;1mSQL (0.001000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Received mail:
+ From: tomoyuki@brains.info
+To: test@example.com
+Subject: =?iso-2022-jp?B?GyRCJWElYhsoQg==?=
+Mime-Version: 1.0
+Content-Type: multipart/mixed; boundary=mimepart_4fe034854e20_176c1dae3a414d
+
+
+--mimepart_4fe034854e20_176c1dae3a414d
+Content-Type: text/plain; charset=iso-2022-jp
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Location
+Hello
+--mimepart_4fe034854e20_176c1dae3a414d
+Content-Type: text/plain; name=hello.txt
+Content-Transfer-Encoding: Base64
+Content-Disposition: attachment; filename=hello.txt
+
+SGVsbG8gV29ybGQ=
+
+--mimepart_4fe034854e20_176c1dae3a414d--
+
+  [4;36;1mMemo Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('Hello', '2012-06-19 17:12:53', 'Location')[0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Received mail:
+ From: tomoyuki@brains.info
+To: receiver@example.com
+Subject: =?iso-2022-jp?B?GyRCJUYlOSVIGyhC?=
+
+Date: Sat, 6 Oct 2007 20:20:22 +0900
+
+Location
+Text
+
+Received mail:
+ From: tomoyuki@brains.info
+To: receiver@example.com
+Subject: =?iso-2022-jp?B?GyRCJWElYhsoQg==?=
+Date: Sat, 6 Oct 2007 23:20:22 +0900
+
+Location
+Text
+  [4;36;1mSQL (0.000000)[0m   [0;1mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('Text', '2007-10-06 23:20:22', 'Location')[0m
+  [4;35;1mSQL (0.001000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Received mail:
+ From: tomoyuki@brains.info
+To: test@example.com
+Subject: =?iso-2022-jp?B?GyRCJWElYhsoQg==?=
+Mime-Version: 1.0
+Content-Type: multipart/mixed; boundary=mimepart_4fe0353d93b48_1a5c1863a21ea
+
+
+--mimepart_4fe0353d93b48_1a5c1863a21ea
+Content-Type: text/plain; charset=iso-2022-jp
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Location
+Hello
+--mimepart_4fe0353d93b48_1a5c1863a21ea
+Content-Type: text/plain; name=hello.txt
+Content-Transfer-Encoding: Base64
+Content-Disposition: attachment; filename=hello.txt
+
+SGVsbG8gV29ybGQ=
+
+--mimepart_4fe0353d93b48_1a5c1863a21ea--
+
+  [4;36;1mMemo Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('Hello', '2012-06-19 17:15:57', 'Location')[0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Received mail:
+ From: tomoyuki@brains.info
+To: receiver@example.com
+Subject: =?iso-2022-jp?B?GyRCJUYlOSVIGyhC?=
+
+Date: Sat, 6 Oct 2007 20:20:22 +0900
+
+Location
+Text
+
+Received mail:
+ From: tomoyuki@brains.info
+To: receiver@example.com
+Subject: =?iso-2022-jp?B?GyRCJWElYhsoQg==?=
+Date: Sat, 6 Oct 2007 23:20:22 +0900
+
+Location
+Text
+  [4;36;1mSQL (0.001000)[0m   [0;1mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('Text', '2007-10-06 23:20:22', 'Location')[0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos WHERE (location = 'Location') [0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Received mail:
+ From: tomoyuki@brains.info
+To: test@example.com
+Subject: =?iso-2022-jp?B?GyRCJWElYhsoQg==?=
+Mime-Version: 1.0
+Content-Type: multipart/mixed; boundary=mimepart_4fe035fde2518_116c1663a4133
+
+
+--mimepart_4fe035fde2518_116c1663a4133
+Content-Type: text/plain; charset=iso-2022-jp
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Location
+Hello
+--mimepart_4fe035fde2518_116c1663a4133
+Content-Type: text/plain; name=hello.txt
+Content-Transfer-Encoding: Base64
+Content-Disposition: attachment; filename=hello.txt
+
+SGVsbG8gV29ybGQ=
+
+--mimepart_4fe035fde2518_116c1663a4133--
+
+  [4;36;1mMemo Columns (0.001000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.001000)[0m   [0mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('Hello', '2012-06-19 17:19:09', 'Location')[0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Received mail:
+ From: tomoyuki@brains.info
+To: receiver@example.com
+Subject: =?iso-2022-jp?B?GyRCJUYlOSVIGyhC?=
+
+Date: Sat, 6 Oct 2007 20:20:22 +0900
+
+Location
+Text
+
+Received mail:
+ From: tomoyuki@brains.info
+To: receiver@example.com
+Subject: =?iso-2022-jp?B?GyRCJWElYhsoQg==?=
+Date: Sat, 6 Oct 2007 23:20:22 +0900
+
+Location
+Text
+  [4;36;1mSQL (0.000000)[0m   [0;1mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('Text', '2007-10-06 23:20:22', 'Location')[0m
+  [4;35;1mSQL (0.002000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Received mail:
+ From: tomoyuki@brains.info
+To: test@example.com
+Subject: =?iso-2022-jp?B?GyRCJWElYhsoQg==?=
+Mime-Version: 1.0
+Content-Type: multipart/mixed; boundary=mimepart_4fe03676fa0_1144c63a4176
+
+
+--mimepart_4fe03676fa0_1144c63a4176
+Content-Type: text/plain; charset=iso-2022-jp
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Location
+Hello
+--mimepart_4fe03676fa0_1144c63a4176
+Content-Type: text/plain; name=hello.txt
+Content-Transfer-Encoding: Base64
+Content-Disposition: attachment; filename=hello.txt
+
+SGVsbG8gV29ybGQ=
+
+--mimepart_4fe03676fa0_1144c63a4176--
+
+  [4;36;1mMemo Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('Hello', '2012-06-19 17:21:10', 'Location')[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Received mail:
+ From: tomoyuki@brains.info
+To: receiver@example.com
+Subject: =?iso-2022-jp?B?GyRCJUYlOSVIGyhC?=
+
+Date: Sat, 6 Oct 2007 20:20:22 +0900
+
+Location
+Text
+
+Received mail:
+ From: tomoyuki@brains.info
+To: receiver@example.com
+Subject: =?iso-2022-jp?B?GyRCJWElYhsoQg==?=
+Date: Sat, 6 Oct 2007 23:20:22 +0900
+
+Location
+Text
+  [4;36;1mSQL (0.000000)[0m   [0;1mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('Text', '2007-10-06 23:20:22', 'Location')[0m
+  [4;35;1mSQL (0.001000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Received mail:
+ From: tomoyuki@brains.info
+To: test@example.com
+Subject: =?iso-2022-jp?B?GyRCJWElYhsoQg==?=
+Mime-Version: 1.0
+Content-Type: multipart/mixed; boundary=mimepart_4fe036d79e340_16641dae3a411f
+
+
+--mimepart_4fe036d79e340_16641dae3a411f
+Content-Type: text/plain; charset=iso-2022-jp
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Location
+Hello
+--mimepart_4fe036d79e340_16641dae3a411f
+Content-Type: text/plain; name=hello.txt
+Content-Transfer-Encoding: Base64
+Content-Disposition: attachment; filename=hello.txt
+
+SGVsbG8gV29ybGQ=
+
+--mimepart_4fe036d79e340_16641dae3a411f--
+
+  [4;36;1mMemo Columns (0.001000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('Hello', '2012-06-19 17:22:47', 'Location')[0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Received mail:
+ From: tomoyuki@brains.info
+To: receiver@example.com
+Subject: =?iso-2022-jp?B?GyRCJUYlOSVIGyhC?=
+
+Date: Sat, 6 Oct 2007 20:20:22 +0900
+
+Location
+Text
+
+Received mail:
+ From: tomoyuki@brains.info
+To: receiver@example.com
+Subject: =?iso-2022-jp?B?GyRCJWElYhsoQg==?=
+Date: Sat, 6 Oct 2007 23:20:22 +0900
+
+Location
+Text
+  [4;36;1mSQL (0.000000)[0m   [0;1mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('Text', '2007-10-06 23:20:22', 'Location')[0m
+  [4;35;1mSQL (0.001000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Received mail:
+ From: tomoyuki@brains.info
+To: test@example.com
+Subject: =?iso-2022-jp?B?GyRCJWElYhsoQg==?=
+Mime-Version: 1.0
+Content-Type: multipart/mixed; boundary=mimepart_4fe0375235f48_1b1c1563a0178
+
+
+--mimepart_4fe0375235f48_1b1c1563a0178
+Content-Type: text/plain; charset=iso-2022-jp
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Location
+Hello
+--mimepart_4fe0375235f48_1b1c1563a0178
+Content-Type: text/plain; name=hello.txt
+Content-Transfer-Encoding: Base64
+Content-Disposition: attachment; filename=hello.txt
+
+SGVsbG8gV29ybGQ=
+
+--mimepart_4fe0375235f48_1b1c1563a0178--
+
+  [4;36;1mMemo Columns (0.001000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.001000)[0m   [0mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('Hello', '2012-06-19 17:24:50', 'Location')[0m
+  [4;36;1mAttachment Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM attachments[0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO attachments (`content_type`, `memo_id`, `name`, `size`, `content`) VALUES('text/plain', 1, 'hello.txt', 11, x'48656c6c6f20576f726c64')[0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (location = 'Location') [0m
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.001000)[0m   [0mBEGIN[0m
+Received mail:
+ From: tomoyuki@brains.info
+To: receiver@example.com
+Subject: =?iso-2022-jp?B?GyRCJUYlOSVIGyhC?=
+
+Date: Sat, 6 Oct 2007 20:20:22 +0900
+
+Location
+Text
+
+Received mail:
+ From: tomoyuki@brains.info
+To: receiver@example.com
+Subject: =?iso-2022-jp?B?GyRCJWElYhsoQg==?=
+Date: Sat, 6 Oct 2007 23:20:22 +0900
+
+Location
+Text
+  [4;36;1mSQL (0.000000)[0m   [0;1mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('Text', '2007-10-06 23:20:22', 'Location')[0m
+  [4;35;1mMemo Load (0.001000)[0m   [0mSELECT * FROM memos WHERE (location = 'Location') [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Received mail:
+ From: tomoyuki@brains.info
+To: test@example.com
+Subject: =?iso-2022-jp?B?GyRCJWElYhsoQg==?=
+Mime-Version: 1.0
+Content-Type: multipart/mixed; boundary=mimepart_4fe038679e728_1aa0121e3a4118
+
+
+--mimepart_4fe038679e728_1aa0121e3a4118
+Content-Type: text/plain; charset=iso-2022-jp
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Location
+Hello
+--mimepart_4fe038679e728_1aa0121e3a4118
+Content-Type: text/plain; name=hello.txt
+Content-Transfer-Encoding: Base64
+Content-Disposition: attachment; filename=hello.txt
+
+SGVsbG8gV29ybGQgIQ==
+
+--mimepart_4fe038679e728_1aa0121e3a4118--
+
+  [4;36;1mMemo Columns (0.001000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('Hello', '2012-06-19 17:29:27', 'Location')[0m
+  [4;36;1mAttachment Columns (0.001000)[0m   [0;1mSHOW FIELDS FROM attachments[0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO attachments (`content_type`, `memo_id`, `name`, `size`, `content`) VALUES('text/plain', 1, 'hello.txt', 13, x'48656c6c6f20576f726c642021')[0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos WHERE (location = 'Location') [0m
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, name, content FROM attachments WHERE (attachments.memo_id = 1) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+Received mail:
+ From: tomoyuki@brains.info
+To: receiver@example.com
+Subject: =?iso-2022-jp?B?GyRCJUYlOSVIGyhC?=
+
+Date: Sat, 6 Oct 2007 20:20:22 +0900
+
+Location
+Text
+
+Received mail:
+ From: tomoyuki@brains.info
+To: receiver@example.com
+Subject: =?iso-2022-jp?B?GyRCJWElYhsoQg==?=
+Date: Sat, 6 Oct 2007 23:20:22 +0900
+
+Location
+Text
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO memos (`text`, `created_at`, `location`) VALUES('Text', '2007-10-06 23:20:22', 'Location')[0m
+  [4;36;1mMemo Load (0.001000)[0m   [0;1mSELECT * FROM memos WHERE (location = 'Location') [0m
+  [4;35;1mSQL (0.001000)[0m   [0mROLLBACK[0m

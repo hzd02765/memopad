@@ -25,22 +25,22 @@ class MemoMailerTest < Test::Unit::TestCase
     end
     memos = Memo.find(:all, :conditions => "location = 'Location'")
     assert_equal 1, memos.length
-    assert_equal Time.parse('Sat, 6 oct 2007 23:20:22 +0900'), memos[0].created_at
+    assert_equal Time.parse('Sat, 6 Oct 2007 23:20:22 +0900'), memos[0].created_at
   end
 
   class TestMailer < ActionMailer::Base
     def test_mail
       @charset = CHARSET
       recipients 'test@example.com'
-      subject NKF.nkf('-M', 'メモ')
-      from MemoPad::MAIL_FROM
-      part :content_type => 'text/plain',
+      subject    NKF.nkf('-M', 'メモ')
+      from       MemoPad::MAIL_FROM
+      part :content_type => 'text/plain', 
         :transfer_encoding => '7bit',
         :body => "Location\r\nHello"
       attachment :content_type => 'text/plain',
         :filename => 'hello.txt',
         :transfer_encoding => 'base64',
-        :body => 'Hello World'
+        :body => 'Hello World !'
     end
   end
   
