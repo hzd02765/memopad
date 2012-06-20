@@ -29,7 +29,12 @@ module MemosHelper
   
   def format_attachment_column_value(atch, colname)
     if colname == 'content'
-      link_to h(atch.name), {:action => 'file', :id => atch.id, :filename => atch.name}
+      # link_to h(atch.name), {:action => 'file', :id => atch.id, :filename => atch.name}
+      if atch.content_type =~ /image\/(x-|p)?(jpe?g|png|gif)/
+        image_tag url_for(:action => 'file', :id => atch.id, :filename => atch.name), :alt => h(atch.name)
+      else
+        link_to h(atch.name), {:action => 'file', :id => atch.id, :filename => atch.name}
+      end
     else
       h atch.send(colname)
     end

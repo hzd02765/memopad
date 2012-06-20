@@ -11,7 +11,7 @@ class MemosController < ApplicationController
          :redirect_to => { :action => :list }
 
   def list
-    @memo_pages, @memos = paginate :memos, :per_page => 10
+    @memo_pages, @memos = paginate :memos, :per_page => 10, :order => 'created_at desc'
   end
 
   def show
