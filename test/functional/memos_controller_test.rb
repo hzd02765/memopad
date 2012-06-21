@@ -81,8 +81,17 @@ class MemosControllerTest < Test::Unit::TestCase
     end
     
     get :mail
-    assert_response :redirect
-    assert_redirected_to :action => 'list'
+    
+    # assert_response :redirect
+    # assert_redirected_to :action => 'list'
+    
+    assert_response :success
+    assert_select 'tr' do
+      assert_select 'td', '2007-10-06 23:20'
+      assert_select 'td', 'Text'
+      assert_select 'td', 'Location'
+      assert_select 'td', '0'
+    end
     
     assert !Net::POP3.instance.mails[0].deleted?
     assert Net::POP3.instance.mails[1].deleted?
