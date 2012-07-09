@@ -24,11 +24,9 @@ class MemosController < ApplicationController
 
   def create
     @memo = Memo.new(params[:memo])
-    
     if file_attached?
       attach_file
     end
-    
     if @memo.save
       flash[:notice] = _('Memo was successfully created.')
       redirect_to :action => 'list'
@@ -58,7 +56,7 @@ class MemosController < ApplicationController
     Memo.find(params[:id]).destroy
     redirect_to :action => 'list'
   end
-
+  
   def file
     attachment = Attachment.find params[:id]
     filename = (params[:fileext]) ? "#{params[:filename]}.#{params[:fileext]}" : params[:filename]
@@ -70,18 +68,29 @@ class MemosController < ApplicationController
   end
   
   def mail
-    Net::POP3.APOP(MemoPad::USE_APOP).start(MemoPad::POP_SERVER[:address], MemoPad::POP_SERVER[:port], MemoPad::POP_SERVER[:account], MemoPad::POP_SERVER[:password]) do |pop|
+    memos = []
+    Net::POP3.APOP(MemoPad::USE_APOP).start(MemoPad::POP_SERVER[:address], MemoPad::POP_SERVER[:port],
+											MemoPad::POP_SERVER[:account], MemoPad::POP_SERVER[:password]) do |pop|
       unless pop.mails.empty?
         pop.each_mail do |m|
-          m.delete if MemoMailer.receive m.pop
+          # m.delete if MemoMailer.receive m.pop
+          memo = MemoMailer.receive m.pop
+          if memo
+            m.delete
+            memos << memo
+          end
         end
       end
     end
     
-    redirect_to :action => 'list'
+    # redirect_to :action => 'list'
     
+    memos.sort! do |a, b|
+      a.created_at <=> b.created_at
+    end
+    render :partial => 'item', :collection => memos
   end
-  
+
   private
   
   def file_attached?
@@ -89,7 +98,7 @@ class MemosController < ApplicationController
   end
   
   def attach_file
-      @memo.attachments.create :name => params[:file].original_filename,
+    @memo.attachments.create :name => params[:file].original_filename,
         :size => params[:file].length, :content_type => params[:file].content_type,
         :content => params[:file].read
   end

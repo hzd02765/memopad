@@ -52,8 +52,7 @@ class MemosControllerTest < Test::Unit::TestCase
     
     # assert_select 'a', :count => 2
     assert_select 'a', {:count => ANCHOR_OFFSET + 2}
-    
-    assert_select 'p', {:text => /#{memos (:one).location}/, :count => 1}
+    assert_select 'p', {:text => /#{memos(:one).location}/, :count => 1}
     assert_select 'p', {:text => /2007-09-25 15:32/, :count => 1}
     
     assert_select 'a[href=/memos/file/1/hello.txt]', {:text => 'hello.txt', :count => 1}
