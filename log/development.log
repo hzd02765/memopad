@@ -6112,3 +6112,461 @@ Completed in 0.00800 (124 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.00300 (37%
   [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
   [4;36;1mSQL (0.002000)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
   [4;35;1mSQL (0.000000)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.019000)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.027000)[0m   [0;1mSHOW FIELDS FROM attachments[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM attachments[0m
+  [4;36;1mSQL (0.008000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM memos[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.042000)[0m   [0mDROP DATABASE IF EXISTS `memopad_test`[0m
+  [4;36;1mSQL (0.020000)[0m   [0;1mCREATE DATABASE `memopad_test`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'attachments': DROP TABLE attachments[0m
+  [4;35;1mSQL (0.005000)[0m   [0mCREATE TABLE attachments (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `memo_id` int(11) DEFAULT NULL, `name` varchar(64) DEFAULT NULL, `size` int(11) DEFAULT NULL, `content_type` varchar(64) DEFAULT NULL, `content` blob DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'memos': DROP TABLE memos[0m
+  [4;35;1mSQL (0.006000)[0m   [0mCREATE TABLE memos (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime DEFAULT NULL, `text` varchar(256) DEFAULT NULL, `location` varchar(256) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.005000)[0m   [0;1mCREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.001000)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSHOW FIELDS FROM attachments[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM attachments[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM memos[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.005000)[0m   [0mDROP DATABASE IF EXISTS `memopad_test`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCREATE DATABASE `memopad_test`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'attachments': DROP TABLE attachments[0m
+  [4;35;1mSQL (0.005000)[0m   [0mCREATE TABLE attachments (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `memo_id` int(11) DEFAULT NULL, `name` varchar(64) DEFAULT NULL, `size` int(11) DEFAULT NULL, `content_type` varchar(64) DEFAULT NULL, `content` blob DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'memos': DROP TABLE memos[0m
+  [4;35;1mSQL (0.004000)[0m   [0mCREATE TABLE memos (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime DEFAULT NULL, `text` varchar(256) DEFAULT NULL, `location` varchar(256) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.003000)[0m   [0;1mCREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.001000)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
+  [4;35;1mSQL (0.001000)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT version FROM schema_info[0m
+
+
+Processing MemosController#index (for 127.0.0.1 at 2012-07-10 17:45:48) [GET]
+  Session ID: 6c1062f01036b97005a41248d2f40886
+  Parameters: {"action"=>"index", "controller"=>"memos"}
+  [4;36;1mMemo Columns (0.001000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM memos [0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos ORDER BY created_at desc LIMIT 0, 10[0m
+Rendering layoutfalseactionlist within layouts/memos
+Rendering memos/list
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 4) [0m
+  [4;36;1mAttachment Load (0.001000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+Completed in 0.05300 (18 reqs/sec) | Rendering: 0.01300 (24%) | DB: 0.00300 (5%) | 200 OK [http://localhost/memos]
+
+
+Processing MemosController#mail (for 127.0.0.1 at 2012-07-10 17:46:04) [POST]
+  Session ID: 6c1062f01036b97005a41248d2f40886
+  Parameters: {"action"=>"mail", "controller"=>"memos"}
+
+
+SocketError (getaddrinfo: no address associated with hostname.):
+    C:/InstantRails/ruby/lib/ruby/1.8/net/protocol.rb:206:in `initialize'
+    C:/InstantRails/ruby/lib/ruby/1.8/net/protocol.rb:206:in `new'
+    C:/InstantRails/ruby/lib/ruby/1.8/net/protocol.rb:206:in `old_open'
+    C:/InstantRails/ruby/lib/ruby/1.8/timeout.rb:56:in `timeout'
+    C:/InstantRails/ruby/lib/ruby/1.8/timeout.rb:76:in `timeout'
+    C:/InstantRails/ruby/lib/ruby/1.8/net/protocol.rb:206:in `old_open'
+    C:/InstantRails/ruby/lib/ruby/1.8/net/pop.rb:438:in `do_start'
+    C:/InstantRails/ruby/lib/ruby/1.8/net/pop.rb:426:in `start'
+    C:/InstantRails/ruby/lib/ruby/1.8/net/pop.rb:329:in `start'
+    /app/controllers/memos_controller.rb:72:in `mail'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `send'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:438:in `call'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:449:in `call'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/InstantRails/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:78:in `process'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `synchronize'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:618:in `process_client'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `each'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `process_client'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `initialize'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `new'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `initialize'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `new'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `run'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:271:in `run'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `each'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `run'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:127:in `run'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/command.rb:211:in `run'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:243
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    C:/InstantRails/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    C:/InstantRails/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    C:/InstantRails/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    C:/InstantRails/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing MemosController#new (for 127.0.0.1 at 2012-07-10 17:46:25) [GET]
+  Session ID: 6c1062f01036b97005a41248d2f40886
+  Parameters: {"action"=>"new", "controller"=>"memos"}
+  [4;35;1mMemo Columns (0.001000)[0m   [0mSHOW FIELDS FROM memos[0m
+Rendering  within layouts/memos
+Rendering memos/new
+Rendered memos/_form (0.00300)
+Completed in 0.01900 (52 reqs/sec) | Rendering: 0.01000 (52%) | DB: 0.00100 (5%) | 200 OK [http://localhost/memos/new]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2012-07-10 17:46:27) [GET]
+  Session ID: 6c1062f01036b97005a41248d2f40886
+  Parameters: {"action"=>"list", "controller"=>"memos"}
+  [4;36;1mMemo Columns (0.001000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM memos [0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos ORDER BY created_at desc LIMIT 0, 10[0m
+Rendering  within layouts/memos
+Rendering memos/list
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 4) [0m
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+Completed in 0.01900 (52 reqs/sec) | Rendering: 0.01100 (57%) | DB: 0.00100 (5%) | 200 OK [http://localhost/memos/list]
+
+
+Processing MemosController#mail (for 127.0.0.1 at 2012-07-10 17:46:30) [POST]
+  Session ID: 6c1062f01036b97005a41248d2f40886
+  Parameters: {"action"=>"mail", "controller"=>"memos"}
+
+
+SocketError (getaddrinfo: no address associated with hostname.):
+    C:/InstantRails/ruby/lib/ruby/1.8/net/protocol.rb:206:in `initialize'
+    C:/InstantRails/ruby/lib/ruby/1.8/net/protocol.rb:206:in `new'
+    C:/InstantRails/ruby/lib/ruby/1.8/net/protocol.rb:206:in `old_open'
+    C:/InstantRails/ruby/lib/ruby/1.8/timeout.rb:56:in `timeout'
+    C:/InstantRails/ruby/lib/ruby/1.8/timeout.rb:76:in `timeout'
+    C:/InstantRails/ruby/lib/ruby/1.8/net/protocol.rb:206:in `old_open'
+    C:/InstantRails/ruby/lib/ruby/1.8/net/pop.rb:438:in `do_start'
+    C:/InstantRails/ruby/lib/ruby/1.8/net/pop.rb:426:in `start'
+    C:/InstantRails/ruby/lib/ruby/1.8/net/pop.rb:329:in `start'
+    /app/controllers/memos_controller.rb:72:in `mail'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `send'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:438:in `call'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:449:in `call'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/InstantRails/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:78:in `process'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `synchronize'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:618:in `process_client'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `each'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `process_client'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `initialize'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `new'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `initialize'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `new'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `run'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:271:in `run'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `each'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `run'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:127:in `run'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/command.rb:211:in `run'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:243
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    C:/InstantRails/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    C:/InstantRails/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    C:/InstantRails/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    C:/InstantRails/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing MemosController#new (for 127.0.0.1 at 2012-07-10 17:47:02) [GET]
+  Session ID: 6c1062f01036b97005a41248d2f40886
+  Parameters: {"action"=>"new", "controller"=>"memos"}
+  [4;35;1mMemo Columns (0.001000)[0m   [0mSHOW FIELDS FROM memos[0m
+Rendering  within layouts/memos
+Rendering memos/new
+Rendered memos/_form (0.00200)
+Completed in 0.01600 (62 reqs/sec) | Rendering: 0.00800 (49%) | DB: 0.00100 (6%) | 200 OK [http://localhost/memos/new]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2012-07-10 17:47:03) [GET]
+  Session ID: 6c1062f01036b97005a41248d2f40886
+  Parameters: {"action"=>"list", "controller"=>"memos"}
+  [4;36;1mMemo Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM memos [0m
+  [4;36;1mMemo Load (0.001000)[0m   [0;1mSELECT * FROM memos ORDER BY created_at desc LIMIT 0, 10[0m
+Rendering  within layouts/memos
+Rendering memos/list
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 4) [0m
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+Completed in 0.01900 (52 reqs/sec) | Rendering: 0.01000 (52%) | DB: 0.00300 (15%) | 200 OK [http://localhost/memos/list]
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSHOW FIELDS FROM attachments[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM attachments[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM memos[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.005000)[0m   [0mDROP DATABASE IF EXISTS `memopad_test`[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCREATE DATABASE `memopad_test`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'attachments': DROP TABLE attachments[0m
+  [4;35;1mSQL (0.004000)[0m   [0mCREATE TABLE attachments (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `memo_id` int(11) DEFAULT NULL, `name` varchar(64) DEFAULT NULL, `size` int(11) DEFAULT NULL, `content_type` varchar(64) DEFAULT NULL, `content` blob DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'memos': DROP TABLE memos[0m
+  [4;35;1mSQL (0.003000)[0m   [0mCREATE TABLE memos (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime DEFAULT NULL, `text` varchar(256) DEFAULT NULL, `location` varchar(256) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.003000)[0m   [0;1mCREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.001000)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSHOW FIELDS FROM attachments[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM attachments[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM memos[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.006000)[0m   [0mDROP DATABASE IF EXISTS `memopad_test`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCREATE DATABASE `memopad_test`[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'attachments': DROP TABLE attachments[0m
+  [4;35;1mSQL (0.004000)[0m   [0mCREATE TABLE attachments (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `memo_id` int(11) DEFAULT NULL, `name` varchar(64) DEFAULT NULL, `size` int(11) DEFAULT NULL, `content_type` varchar(64) DEFAULT NULL, `content` blob DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'memos': DROP TABLE memos[0m
+  [4;35;1mSQL (0.014000)[0m   [0mCREATE TABLE memos (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime DEFAULT NULL, `text` varchar(256) DEFAULT NULL, `location` varchar(256) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.003000)[0m   [0;1mCREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.001000)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
+  [4;35;1mSQL (0.001000)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSHOW FIELDS FROM attachments[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM attachments[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM memos[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.006000)[0m   [0mDROP DATABASE IF EXISTS `memopad_test`[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCREATE DATABASE `memopad_test`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'attachments': DROP TABLE attachments[0m
+  [4;35;1mSQL (0.019000)[0m   [0mCREATE TABLE attachments (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `memo_id` int(11) DEFAULT NULL, `name` varchar(64) DEFAULT NULL, `size` int(11) DEFAULT NULL, `content_type` varchar(64) DEFAULT NULL, `content` blob DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'memos': DROP TABLE memos[0m
+  [4;35;1mSQL (0.004000)[0m   [0mCREATE TABLE memos (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime DEFAULT NULL, `text` varchar(256) DEFAULT NULL, `location` varchar(256) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.003000)[0m   [0;1mCREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.001000)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mUPDATE schema_info SET version = 3[0m
+
+
+Processing MemosController#new (for 127.0.0.1 at 2012-07-10 17:58:07) [GET]
+  Session ID: 6c1062f01036b97005a41248d2f40886
+  Parameters: {"action"=>"new", "controller"=>"memos"}
+  [4;35;1mMemo Columns (0.001000)[0m   [0mSHOW FIELDS FROM memos[0m
+Rendering  within layouts/memos
+Rendering memos/new
+Rendered memos/_form (0.00200)
+Completed in 0.01600 (62 reqs/sec) | Rendering: 0.00800 (50%) | DB: 0.00100 (6%) | 200 OK [http://localhost/memos/new]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2012-07-10 17:58:09) [GET]
+  Session ID: 6c1062f01036b97005a41248d2f40886
+  Parameters: {"action"=>"list", "controller"=>"memos"}
+  [4;36;1mMemo Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM memos [0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos ORDER BY created_at desc LIMIT 0, 10[0m
+Rendering  within layouts/memos
+Rendering memos/list
+  [4;35;1mAttachment Load (0.001000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 4) [0m
+  [4;36;1mAttachment Load (0.001000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+Completed in 0.02100 (47 reqs/sec) | Rendering: 0.01000 (47%) | DB: 0.00400 (19%) | 200 OK [http://localhost/memos/list]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2012-07-10 17:58:11) [GET]
+  Session ID: 6c1062f01036b97005a41248d2f40886
+  Parameters: {"action"=>"list", "controller"=>"memos"}
+  [4;35;1mMemo Columns (0.001000)[0m   [0mSHOW FIELDS FROM memos[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM memos [0m
+  [4;35;1mMemo Load (0.000000)[0m   [0mSELECT * FROM memos ORDER BY created_at desc LIMIT 0, 10[0m
+Rendering  within layouts/memos
+Rendering memos/list
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 4) [0m
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+Completed in 0.02000 (50 reqs/sec) | Rendering: 0.01100 (54%) | DB: 0.00200 (10%) | 200 OK [http://localhost/memos/list]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2012-07-10 17:58:17) [GET]
+  Session ID: 6c1062f01036b97005a41248d2f40886
+  Parameters: {"action"=>"list", "controller"=>"memos"}
+  [4;36;1mMemo Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM memos [0m
+  [4;36;1mMemo Load (0.001000)[0m   [0;1mSELECT * FROM memos ORDER BY created_at desc LIMIT 0, 10[0m
+Rendering  within layouts/memos
+Rendering memos/list
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 4) [0m
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+Completed in 0.01900 (52 reqs/sec) | Rendering: 0.01000 (52%) | DB: 0.00300 (15%) | 200 OK [http://localhost/memos/list]
+
+
+Processing MemosController#mail (for 127.0.0.1 at 2012-07-10 17:58:18) [POST]
+  Session ID: 6c1062f01036b97005a41248d2f40886
+  Parameters: {"action"=>"mail", "controller"=>"memos"}
+
+
+SocketError (getaddrinfo: no address associated with hostname.):
+    C:/InstantRails/ruby/lib/ruby/1.8/net/protocol.rb:206:in `initialize'
+    C:/InstantRails/ruby/lib/ruby/1.8/net/protocol.rb:206:in `new'
+    C:/InstantRails/ruby/lib/ruby/1.8/net/protocol.rb:206:in `old_open'
+    C:/InstantRails/ruby/lib/ruby/1.8/timeout.rb:56:in `timeout'
+    C:/InstantRails/ruby/lib/ruby/1.8/timeout.rb:76:in `timeout'
+    C:/InstantRails/ruby/lib/ruby/1.8/net/protocol.rb:206:in `old_open'
+    C:/InstantRails/ruby/lib/ruby/1.8/net/pop.rb:438:in `do_start'
+    C:/InstantRails/ruby/lib/ruby/1.8/net/pop.rb:426:in `start'
+    C:/InstantRails/ruby/lib/ruby/1.8/net/pop.rb:329:in `start'
+    /app/controllers/memos_controller.rb:72:in `mail'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `send'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:438:in `call'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:449:in `call'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/InstantRails/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:78:in `process'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `synchronize'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:618:in `process_client'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `each'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `process_client'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `initialize'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `new'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `initialize'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `new'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `run'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:271:in `run'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `each'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `run'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:127:in `run'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/command.rb:211:in `run'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:243
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    C:/InstantRails/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    C:/InstantRails/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    C:/InstantRails/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    C:/InstantRails/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering C:/InstantRails/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing MemosController#new (for 127.0.0.1 at 2012-07-10 17:58:32) [GET]
+  Session ID: 6c1062f01036b97005a41248d2f40886
+  Parameters: {"action"=>"new", "controller"=>"memos"}
+  [4;35;1mMemo Columns (0.001000)[0m   [0mSHOW FIELDS FROM memos[0m
+Rendering  within layouts/memos
+Rendering memos/new
+Rendered memos/_form (0.00200)
+Completed in 0.01700 (58 reqs/sec) | Rendering: 0.00800 (47%) | DB: 0.00100 (5%) | 200 OK [http://localhost/memos/new]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2012-07-10 17:58:34) [GET]
+  Session ID: 6c1062f01036b97005a41248d2f40886
+  Parameters: {"action"=>"list", "controller"=>"memos"}
+  [4;36;1mMemo Columns (0.001000)[0m   [0;1mSHOW FIELDS FROM memos[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM memos [0m
+  [4;36;1mMemo Load (0.000000)[0m   [0;1mSELECT * FROM memos ORDER BY created_at desc LIMIT 0, 10[0m
+Rendering  within layouts/memos
+Rendering memos/list
+  [4;35;1mAttachment Load (0.000000)[0m   [0mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 4) [0m
+  [4;36;1mAttachment Load (0.000000)[0m   [0;1mSELECT id, memo_id, name, size, content_type FROM attachments WHERE (attachments.memo_id = 1) [0m
+Completed in 0.01900 (52 reqs/sec) | Rendering: 0.01100 (57%) | DB: 0.00100 (5%) | 200 OK [http://localhost/memos/list]
