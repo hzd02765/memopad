@@ -39,4 +39,13 @@ module MemosHelper
       h atch.send(colname)
     end
   end
+  
+  def format_attachment(a)
+    if a.content_type =~ /image\/(x-|p)?(jpe?g|png|gif)/
+      "<span id=\"a#{a.id}\">#{link_to_function h(a.name), "$('a#{a.id}').innerHTML = '#{image_tag url_for(:action => 'file', :id => a.id, :filename => a.name), :alt => h(a.name)}'"}</span>"
+    else
+      link_to h(a.name), :action => 'file', :id => a.id, :filename => a.name
+    end
+  end
+  
 end

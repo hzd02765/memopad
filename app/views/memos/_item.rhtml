@@ -1,9 +1,17 @@
-<tr>
-  <% for column in Memo.content_columns %>
-    <td><%= format_column_value item, column.name %></td>
-  <% end %>
-  <td><%= item.attachments.length %></td>
-  <td><%= link_to _('Show'), :action => 'show', :id => item %></td>
-  <td><%= link_to _('Edit'), :action => 'edit', :id => item %></td>
-  <td><%= link_to _('Destroy'), {:action => ' destroy', :id => item }, :confirm => _('Are you sure?'), :method => :post %></td>
-</tr>
+  <div>
+    <span><%= link_to_function '+', "showItem('#{item.id}')", :id => "item#{item.id}"%></span>
+    <span><%= format_column_value item, 'created_at' %></span>
+    <span><%= format_column_value item, 'location' %></span>
+  </div>
+  <div id="desc<%= item.id %>" style="display:none; margin-left: 1em">
+  	<div>
+      <span id="text<%= item.id %>"><%= format_column_value item, 'text' %></span>
+	</div>
+	<% for attachment in item.attachments %>
+      <div style="margin-bottom: 1em"><%= format_attachment attachment %></div>
+    <% end %>
+    <div>
+      <span><%= link_to _('Edit'), :action => 'edit', :id => item %></span>
+      <span><%= link_to _('Destroy'), { :action => 'destroy', :id => item }, :confirm => _('Are you sure?'), :method => :post %></span>
+    </div>
+  </div>
